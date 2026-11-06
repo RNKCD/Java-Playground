@@ -47,7 +47,7 @@ async function render(){
 }
 try{
   await cheerpjInit();
-  const library=await cheerpjRunLibrary('/app/java/music-album-explorer.jar');
+  const library=await cheerpjRunLibrary('/app'+new URL('../../java/music-album-explorer.jar',location.href).pathname);
   window.AlbumWebBridge=await library.AlbumWebBridge;
   $('dataset').addEventListener('change',()=>loadDataset().catch(showError));
   $('artist').addEventListener('input',()=>render().catch(showError));

@@ -144,8 +144,9 @@ async function initializeJava() {
       new URL("./", window.location.href)
     );
 
-    const jarPath =
-  "/app/java-playground/java/sorting-visualizer.jar";
+    // CheerpJ maps "/app/" to the web server root, so prefix the
+    // absolute URL path (works on localhost and GitHub Pages).
+    const jarPath = "/app" + jarUrl.pathname;
 
     console.log("Loading Java from:", jarPath);
 
