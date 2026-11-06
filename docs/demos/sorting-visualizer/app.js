@@ -144,7 +144,8 @@ async function initializeJava() {
       new URL("./", window.location.href)
     );
 
-    const jarPath = "/app" + jarUrl.pathname;
+    const jarPath =
+  "/app/java-playground/java/sorting-visualizer.jar";
 
     console.log("Loading Java from:", jarPath);
 
