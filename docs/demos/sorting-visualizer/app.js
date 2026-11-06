@@ -10,16 +10,17 @@ $("#next").onclick=()=>{idx=Math.min(frames.length-1,idx+1);render()};$("#prev")
     await cheerpjInit();
 
     // Works on localhost and GitHub Pages
-    const jarUrl = new URL(
-      "../../java/sorting-visualizer.jar",
-      window.location.href
-    );
+ 
+const basePath = window.location.hostname.endsWith("github.io")
+  ? "/java-playground"
+  : "";
 
-    const jarPath = "/app" + jarUrl.pathname;
+const jarPath = `/app${basePath}/java/sorting-visualizer.jar`;
 
-    console.log("Loading Java from:", jarPath);
+console.log("Loading Java from:", jarPath);
 
-    const lib = await cheerpjRunLibrary(jarPath);
+const lib = await cheerpjRunLibrary(jarPath);
+
 
     bridge = await new (await lib.SortingBridge)();
 
