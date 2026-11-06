@@ -1,0 +1,4 @@
+move d
+move f
+discard b
+grab-color Y
