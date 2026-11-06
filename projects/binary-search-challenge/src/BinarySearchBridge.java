@@ -1,0 +1,4 @@
+import java.util.*;
+public class BinarySearchBridge {
+ public String search(String csv,int target){String[] p=csv.split(",");if(p.length<1||p.length>64)throw new IllegalArgumentException("Use 1–64 values");int[] a=new int[p.length];for(int i=0;i<a.length;i++)a[i]=Integer.parseInt(p[i].trim());for(int i=1;i<a.length;i++)if(a[i]<a[i-1])throw new IllegalArgumentException("Numbers must be sorted ascending");StringBuilder s=new StringBuilder();int low=0,high=a.length-1;while(low<=high){int mid=(low+high)/2;if(s.length()>0)s.append("\n");s.append(low).append("|").append(high).append("|").append(mid).append("|").append(a[mid]);if(a[mid]==target)break;if(target<a[mid])high=mid-1;else low=mid+1;}RecursiveBinarySearch.count=0;int found=RecursiveBinarySearch.binarySearch(0,a.length-1,target,a);return found+"#"+s.toString();}
+}

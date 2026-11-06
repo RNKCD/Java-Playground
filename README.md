@@ -44,3 +44,11 @@ Repository **Settings → Pages → Deploy from a branch → main → /docs**. T
 4. Add a page under `docs/demos/<project-name>/` and a card to `docs/index.html`.
 
 No Gradle, no Spring Boot, and no server-side Java hosting.
+
+## New algorithm demos
+
+- [Sorting Visualizer](docs/demos/sorting-visualizer/) — Bubble, Selection, Insertion, Exchange, Merge, Quick.
+- [Binary Search Challenge](docs/demos/binary-search-challenge/) — recursive search and visual steps.
+- [Strassen Matrix Lab](docs/demos/matrix-lab/) — 2×2 and 4×4 multiplication.
+
+Build each with `bash scripts/build-<project>.sh`. Java source is preserved in `projects/`. The browser integration requires live testing with CheerpJ.
