@@ -17,7 +17,7 @@ This repository brings my Java coursework to life through simple interactive web
 
 ## 🌐 Live Website
 
-**[Try Java Playground](https://rnkcd.github.io/java-playground/)**
+**[Try Java Playground](https://rnkcd.github.io/Java-Playground/))**
 
 ## 🛠️ Built With
 
