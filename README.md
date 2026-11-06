@@ -1,44 +1,54 @@
-# Java Playground — clean rebuild
+# ☕ Java Playground
 
-A complete replacement repository. **Do not copy into the old folder**: extract this ZIP to a new location and open the included `java-playground` folder in Cursor.
+A collection of small Java projects I built while learning programming, data structures, and algorithms.
 
-## Start locally (Windows PowerShell)
+This repository brings my Java coursework to life through simple interactive web demos.
 
-```powershell
-npx.cmd --yes http-server docs -p 8080 -c-1
+## 🚀 Projects
+
+| Project | Description |
+|---|---|
+| 🎵 Music Album Explorer | Explore and search a collection of music albums. |
+| 🤖 Robot Block Simulator | Move blocks between stacks using Java. |
+| 📦 Inventory Manager | Manage items using a HashMap. |
+| 📊 Sorting Visualizer | See how different sorting algorithms work step by step. |
+| 🔍 Binary Search | Watch binary search find a number in a sorted array. |
+| 🧮 Matrix Lab | Explore matrix multiplication using Strassen's algorithm. |
+
+## 🌐 Live Website
+
+**[Try Java Playground](https://rnkcd.github.io/java-playground/)**
+
+## 🛠️ Built With
+
+- Java
+- HTML, CSS, JavaScript
+- CheerpJ (to run Java in the browser)
+- GitHub Pages
+
+## 💻 Run Locally
+
+Clone the repository:
+
+```bash
+git clone https://github.com/RNKCD/java-playground.git
+cd java-playground
 ```
 
-Open http://127.0.0.1:8080/ . Keep the terminal running. The browser needs internet to load CheerpJ.
+Start a local server:
 
-## Java integration fix
-
-The earlier version used `String(await bridge.method())` on CheerpJ Java string proxies, causing `Cannot convert object to primitive value`. This rebuild uses **Java primitive getters** for the Sorting, Binary Search, Matrix and Robot demos. Java performs all algorithm work; JavaScript reads only numeric results and renders the UI.
-
-## Projects
-
-- Sorting Visualizer — six Java algorithms, step-by-step
-- Binary Search Challenge — recursive search, step-by-step
-- Matrix Lab — Strassen multiplication (2x2 / 4x4)
-- Robot Block Simulator — Java linked stacks
-- Music Album Explorer — experimental browser demo
-- Inventory Manager — Java coursework source (browser demo not yet implemented)
-
-## Build Java JARs again
-
-Precompiled JARs are already in `docs/java/`. Rebuilding is optional. Requires Java JDK. On Windows PowerShell:
-
-```powershell
-mkdir build\sorting-visualizer -Force
-javac --release 8 -d build\sorting-visualizer projects\sorting-visualizer\src\*.java
-jar cf docs\java\sorting-visualizer.jar -C build\sorting-visualizer .
+```bash
+npx http-server docs -p 8080 -c-1
 ```
 
-Other build scripts are in `scripts/` (bash).
+Open **http://localhost:8080** in your browser.
 
-## Publish as new clean repository contents
+*On Windows PowerShell, use `npx.cmd` if `npx` is blocked.*
 
-Copy the extracted `java-playground` folder contents into your local Git repo **after backing up**, or create a fresh Git clone and copy these files over. Run `git add .`, `git commit -m "Rebuild Java Playground"`, `git push origin main`. Configure GitHub Pages to serve `main` / `docs`.
+## 📌 About
 
-## Troubleshooting
+This is a personal learning project. I'll continue adding more Java programs as I learn new concepts.
 
-If stuck, open DevTools (F12) > Console and send the first red error. A local server only serves the site; CheerpJ runs the Java JARs in the browser. Browser execution has not been end-to-end verified here.
+---
+
+Made for learning, experimenting, and having fun with Java! ☕
